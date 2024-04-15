@@ -10,7 +10,7 @@ export const ColorSwitchMode = () => {
     } else {
       setColor('Light')
     }
-  }, [toggleColorMode])
+  }, [colorMode])
   return (
     <HStack>
       <Switch
