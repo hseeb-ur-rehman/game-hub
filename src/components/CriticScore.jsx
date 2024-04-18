@@ -1,5 +1,4 @@
-import { background, Badge } from '@chakra-ui/react'
-import React from 'react'
+import { Badge } from '@chakra-ui/react'
 
 const CriticScore = ({ score }) => {
   let color = score > 75 ? 'green' : score > 60 ? 'yellow' : 'red'
