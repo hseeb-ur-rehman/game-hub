@@ -34,6 +34,7 @@ function App() {
         </Show>
         <GridItem area={'main'}>
           <Platforms
+              selectedPlatform={selectedPlatform}
               setSelectedPlatform={(selectedPlatform) =>
               setSelectedPlatform(selectedPlatform)
             }
