@@ -2,16 +2,20 @@ import { useState, useEffect } from 'react'
 import apiClient from '../services/api-client'
 import { CanceledError } from 'axios'
 
-const useGames = () => {
+const useGames = (selectedGenre) => {
   const [games, setGames] = useState([])
   const [error, setError] = useState('')
   const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
+    console.log(selectedGenre)
     const controller = new AbortController()
     setLoading(true)
     apiClient
-      .get('/games', { signal: controller.signal })
+      .get('/games', {
+        params: { genres: selectedGenre?.slug },
+        signal: controller.signal,
+      })
       .then((res) => {
         setGames(res.data.results)
         setLoading(false)
@@ -23,7 +27,7 @@ const useGames = () => {
       })
 
     return () => controller.abort()
-  }, [])
+  }, [selectedGenre])
 
   return { error, games, isLoading }
 }
