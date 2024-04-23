@@ -3,8 +3,8 @@ import useGames from '../hooks/useGames'
 import GameCard from './GameCard'
 import LoadingSkeletons from './LoadingSkeletons'
 
-const GameGrid = ({selectedGenre}) => {
-  const { error, games, isLoading } = useGames(selectedGenre)
+const GameGrid = ({ selectedGenre, selectedPlatform }) => {
+  const { games, isLoading } = useGames(selectedGenre, selectedPlatform)
   const skeleton = [1, 2, 3, 4, 5, 6]
 
   return (
