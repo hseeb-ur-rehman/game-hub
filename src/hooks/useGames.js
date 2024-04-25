@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import apiClient from '../services/api-client'
 import { CanceledError } from 'axios'
 
-const useGames = (selectedGenre, selectedPlatform, sortOrder) => {
+const useGames = (selectedGenre, selectedPlatform, sortOrder, search) => {
   const [games, setGames] = useState([])
   const [error, setError] = useState('')
   const [isLoading, setLoading] = useState(false)
@@ -17,6 +17,7 @@ const useGames = (selectedGenre, selectedPlatform, sortOrder) => {
           genres: selectedGenre?.slug,
           parent_platforms: selectedPlatform?.id,
           ordering: sortOrder,
+          search: search,
         },
       })
       .then((res) => {
@@ -30,7 +31,7 @@ const useGames = (selectedGenre, selectedPlatform, sortOrder) => {
       })
 
     return () => controller.abort()
-  }, [selectedGenre, selectedPlatform, sortOrder])
+  }, [selectedGenre, selectedPlatform, sortOrder, search])
 
   return { error, games, isLoading }
 }

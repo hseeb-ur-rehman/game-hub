@@ -3,8 +3,8 @@ import useGames from '../hooks/useGames'
 import GameCard from './GameCard'
 import LoadingSkeletons from './LoadingSkeletons'
 
-const GameGrid = ({ selectedGenre, selectedPlatform, sortOrder}) => {
-  const { games, isLoading } = useGames(selectedGenre, selectedPlatform, sortOrder)
+const GameGrid = ({ selectedGenre, selectedPlatform, sortOrder, search}) => {
+  const { games, isLoading } = useGames(selectedGenre, selectedPlatform, sortOrder, search)
   const skeleton = [1, 2, 3, 4, 5, 6]
 
   return (

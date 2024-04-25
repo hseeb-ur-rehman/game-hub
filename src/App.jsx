@@ -5,11 +5,13 @@ import GenreList from './components/GenreList'
 import { useState } from 'react'
 import Platforms from './components/Platforms'
 import SortSelector from './components/SortSelector'
+import GameHeading from './components/GameHeading'
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState(null)
   const [selectedPlatform, setSelectedPlatform] = useState(null)
   const [sortOrder, setSortOrder] = useState(null)
+  const [search, setSearch] = useState(null)
   return (
     <>
       <Grid
@@ -23,7 +25,7 @@ function App() {
         }}
       >
         <GridItem padding={5} area={'nav'}>
-          <NavBar></NavBar>
+          <NavBar setSearch={(search) => setSearch(search)}></NavBar>
         </GridItem>
         <Show above="lg">
           <GridItem area={'aside'} padding={5}>
@@ -34,6 +36,10 @@ function App() {
           </GridItem>
         </Show>
         <GridItem area={'main'}>
+          <GameHeading
+            selectedGenre={selectedGenre}
+            selectedPlatform={selectedPlatform}
+          />
           <HStack padding={4} spacing={5}>
             <Platforms
               selectedPlatform={selectedPlatform}
@@ -47,6 +53,7 @@ function App() {
             />
           </HStack>
           <GameGrid
+            search={search}
             sortOrder={sortOrder}
             selectedPlatform={selectedPlatform}
             selectedGenre={selectedGenre}

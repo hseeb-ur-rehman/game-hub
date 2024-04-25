@@ -3,11 +3,11 @@ import logo from '../assets/logo.webp'
 import { ColorSwitchMode } from './ColorSwitchMode'
 import SearchBar from './SearchBar'
 
-const NavBar = () => {
+const NavBar = ({setSearch}) => {
   return (
     <HStack>
       <Img borderRadius="10px" boxSize="60px" src={logo} />
-      <SearchBar />
+      <SearchBar setSearch={setSearch}/>
       <ColorSwitchMode></ColorSwitchMode>
     </HStack>
   )
