@@ -36,9 +36,10 @@ const PlatformsIcons = ({ games }) => {
   }
 
   return (
-    <HStack>
+    <HStack width={100}>
       {games.parent_platforms.map((platform) => (
         <Icon
+        whiteSpace='normal'
           key={platform.platform.id}
           boxSize={7}
           color="gray.500"

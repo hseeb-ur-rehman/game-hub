@@ -8,11 +8,11 @@ const GameCard = ({ games }) => {
     <Card borderRadius={10} overflow={'hidden'}>
       <Img src={getCroppedImageURL(games.background_image)} />
       <CardBody>
-        <Heading fontSize="2xl">{games.name}</Heading>
-        <HStack justifyContent={'space-between'} marginY={2}>
+        <HStack templatco justifyContent={'space-between'} paddingBottom={5}>
           <PlatformsIcons games={games} />
           <CriticScore score={games.metacritic} />
         </HStack>
+        <Heading fontSize="2xl">{games.name}</Heading>
       </CardBody>
     </Card>
   )

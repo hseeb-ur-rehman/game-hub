@@ -9,7 +9,7 @@ const GameGrid = ({ selectedGenre, selectedPlatform, sortOrder, search}) => {
 
   return (
     <>
-      <SimpleGrid padding={5} columns={{ sm: 1, md: 2, lg: 3 }} spacing={3}>
+      <SimpleGrid padding={5} columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={6}>
         {isLoading &&
           skeleton.map((skeleton) => <LoadingSkeletons key={skeleton} />)}
         {games.map((game) => (
