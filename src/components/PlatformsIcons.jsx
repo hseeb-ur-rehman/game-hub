@@ -7,13 +7,22 @@ import {
   FaAndroid,
 } from 'react-icons/fa'
 import { MdPhoneIphone } from 'react-icons/md'
-import { SiNintendo } from 'react-icons/si'
+import {
+  SiNintendo,
+  SiAtari,
+  SiCommodore,
+  SiSega,
+  SiNeovim,
+} from 'react-icons/si'
 import { BsGlobe } from 'react-icons/bs'
 
 import { HStack, Icon } from '@chakra-ui/react'
 
 const PlatformsIcons = ({ games }) => {
   const iconMap = {
+    sega: SiSega,
+    'commodore-amiga': SiCommodore,
+    atari: SiAtari,
     pc: FaWindows,
     playstation: FaPlaystation,
     xbox: FaXbox,
@@ -23,6 +32,7 @@ const PlatformsIcons = ({ games }) => {
     ios: MdPhoneIphone,
     android: FaAndroid,
     web: BsGlobe,
+    "neo-geo": SiNeovim,
   }
 
   return (
